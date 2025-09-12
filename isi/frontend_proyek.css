@@ -31,13 +31,27 @@ body {
     font-family: 'Courier New', Courier, monospace;
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 60px 20px 20px 20px; 
+    box-sizing: border-box;
 }
 
-.light_or_dark_mode { position: absolute; top: 20px; right: 20px; }
-.isi_dari_segala_isi {
-    width: 100%; display: flex; flex-direction: column;
-    align-items: center; padding: 20px;
+.light_or_dark_mode { 
+    position: fixed;
+    top: 20px; 
+    right: 20px; 
+    z-index: 1000;
 }
+
+.isi_dari_segala_isi {
+    width: 100%; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    padding: 20px;
+    max-width: 600px;
+}
+
 .feature-nav {
     display: flex; gap: 10px; margin-bottom: 20px;
     background-color: var(--container-bg); padding: 8px; border-radius: 12px;
@@ -102,10 +116,9 @@ button:active { transform: scale(0.95); }
 @keyframes timerFlash { 50% { background-color: #dc3545; } }
 
 .raja_dari_segala_raja {
-    position: absolute;
+    position: fixed;
     left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 20px;
     background-color: var(--container-bg);
     padding: 15px 20px;
     border-radius: 12px;
@@ -114,6 +127,8 @@ button:active { transform: scale(0.95); }
     color: var(--text-color);
     font-size: 0.9rem;
     line-height: 1.6;
+    z-index: 999;
+    max-width: 250px;
 }
 
 .raja_dari_segala_raja p {
@@ -126,9 +141,51 @@ button:active { transform: scale(0.95); }
     color: var(--primary-accent);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .raja_dari_segala_raja {
-        display: none;
+        left: 10px;
+        bottom: 10px;
+        font-size: 0.8rem;
+        padding: 10px 15px;
+        max-width: 200px;
     }
 }
 
+@media (max-width: 900px) {
+    .raja_dari_segala_raja {
+        position: static; 
+        margin: 20px auto 0 auto;
+        text-align: center;
+        max-width: none;
+        width: 90%;
+    }
+    
+    body {
+        padding: 20px 10px;
+    }
+    
+    .light_or_dark_mode {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .feature-nav {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .feature-nav button {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+    
+    .clock-time {
+        font-size: 2.5rem;
+    }
+    
+    #tampilan_waktu, #tampilan_timer {
+        font-size: 2rem;
+    }
+}
