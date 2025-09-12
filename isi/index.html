@@ -1,1 +1,67 @@
-test
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Front End Stopwatch, Jam, Timer</title>
+    <link rel="stylesheet" href="frontend_proyek.css">
+</head>
+<body class="dark-mode">
+
+    <div class="raja_dari_segala_raja">
+        <p>Made by</p>
+        <p>Francesco Alexander (535240156)</p>
+        <p>Gunadi Setiawan (535240022)</p>
+    </div>
+    <div class="light_or_dark_mode">
+        <label for="ganti_tema">Mode Gelap</label>
+        <input type="checkbox" id="ganti_tema" checked>
+    </div>
+
+    <div class="isi_dari_segala_isi">
+        <div class="feature-nav">
+            <button id="tampilin_hasil_jam">Jam</button>
+            <button id="tampilin_hasil_stopwatch" class="active">Stopwatch</button>
+            <button id="tampilin_hasil_timer">Timer</button>
+        </div>
+
+        <div id="bagian_jam_section_jam" class="feature-box hidden">
+            <div id="tampilan_jam" class="clock-time">00:00:00</div>
+            <div id="tampilan_tanggal" class="clock-date">Menampilkan tanggal... ...</div>
+        </div>
+        
+        <div id="bagian_stopwatch_section_stopwatch" class="feature-box">
+            <div id="tampilan_waktu">00:00:00.00</div> 
+            <div class="buttons">
+                <button id="tombol_stopwatch_start">Start</button>
+                <button id="tombol_stopwatch_stop">Stop</button>
+                <button id="tombol_stopwatch_reset">Reset</button>
+            </div>
+            <div class="history-box">
+                <h3>History Rep</h3>
+                <ul id="history_rep_stopwatch"></ul>
+            </div>
+            <div class="history-box">
+                <h3>History Reset</h3>
+                <ul id="reset-history_rep_stopwatch"></ul>
+            </div>
+        </div>
+
+        <div id="bagian_timer_section_timer" class="feature-box hidden">
+            <div id="tampilan_timer">00:00:00</div>
+            <div class="timer-inputs">
+                <input type="number" id="input_timer_jam" placeholder="Jam" min="0" max="99">
+                <input type="number" id="input_timer_menit" placeholder="Menit" min="0" max="59">
+                <input type="number" id="input_timer_detik" placeholder="Detik" min="0" max="59">
+            </div>
+            <div class="buttons">
+                <button id="tombol_timer_start">Start</button>
+                <button id="tombol_timer_stop">Stop</button>
+                <button id="tombol_timer_reset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="backend_proyek.js"></script>
+</body>
+</html>
