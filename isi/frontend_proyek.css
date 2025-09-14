@@ -133,6 +133,7 @@ button:active { transform: scale(0.95); }
 
 .raja_dari_segala_raja p {
     margin: 0;
+    white-space: nowrap;
 }
 
 .raja_dari_segala_raja p:first-child {
